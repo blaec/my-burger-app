@@ -11,7 +11,7 @@ import withErrorHandler from "../../hoc/withErrorHandler/withErrorHandler";
 import {connect} from "react-redux";
 import * as actions from '../../store/actions/index'
 
-class BurgerBuilder extends Component {
+export class BurgerBuilder extends Component {
     // constructor(props) {
     //     super(props);
     //     this.state = {...};
@@ -76,6 +76,7 @@ class BurgerBuilder extends Component {
                                    price={this.props.price}/>
                 </Aux>
             );
+            // TODO remove .toFixed(2) so that test could pass
             orderSummary = <OrderSummary ingredients={this.props.ings}
                                          purchaseCanceled={this.purchaseCancelHandler}
                                          purchaseContinued={this.purchaseContinueHandler}
